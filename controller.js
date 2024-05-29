@@ -11,7 +11,8 @@ class StudentController {
   }
 
   async oneStudent(req, res) {
-    const data = await this.studentService.specificData();
+    const { stdid } = req.params;
+    const data = await this.studentService.specificData(stdid);
     res.json(data.rows);
   }
 
