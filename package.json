@@ -1,0 +1,19 @@
+{
+  "name": "tablecreation",
+  "version": "1.0.0",
+  "description": "table",
+  "main": "app.js",
+  "scripts": {
+    "person": "node app.js",
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "node-modules": "^0.0.1",
+    "pg": "^8.11.5"
+  }
+}
