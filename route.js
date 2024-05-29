@@ -3,17 +3,19 @@ const Router = express.Router();
 const service = require("./controller.js");
 
 Router.use(function (req, res, next) {
-  console.log(req.url, "@", Date.now());
+  console.log(`${req.url} @ ${Date.now()}`);
   next();
 });
 
-Router.route("/create").get(service.certain);
+//Router.route("/create").get(service.certain);
 
-Router.route("/").get(service.userDisplay).post(service.inputUser);
+Router.route("/")
+  .get(service.studentDisplay.bind(service))
+  .post(service.inputeStudent.bind(service));
 
 Router.route("/:stdid")
-  .get(service.oneUser)
-  .post(service.updateUser)
-  .delete(service.deleteUser);
+  .get(service.oneStudent.bind(service))
+  .post(service.updateStudent.bind(service))
+  .delete(service.deleteStudent.bind(service));
 
 module.exports = Router;
