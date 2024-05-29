@@ -7,7 +7,8 @@ class StudentController {
 
   async studentDisplay(req, res) {
     const data = await this.studentService.dataDisplay();
-    res.json(data.rows);
+    //res.json(data.rows);
+    res.render("pages/index", { students: data.rows });
   }
 
   async oneStudent(req, res) {

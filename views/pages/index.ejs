@@ -17,7 +17,7 @@
         font-size: 40px;
       }
       p {
-        color: #2e8b00;
+        color: #358f08;
         font-weight: 300;
         font-size: 32px;
       }
@@ -28,9 +28,36 @@
   </head>
   <body>
     <h1>Hi, Welcome to THE SERVER</h1>
-    <p id="DES">
+    <p>
       Here are some of the work ideas <br />
       add <b>/student</b> to url to get all Students
     </p>
+
+    <h1>Students List</h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Total Marks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% students.forEach(student => { %>
+        <tr>
+          <td><%= student.stdid %></td>
+          <td><%= student.first_name %></td>
+          <td><%= student.last_name %></td>
+          <td><%= student.phone_no %></td>
+          <td><%= student.email %></td>
+          <td><%= student.total_marks %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+    </ul>
   </body>
 </html>
